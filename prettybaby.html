@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Fairytale Love Story 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(135deg, #fff0f5 0%, #ffe4e1 50%, #ffd1dc 100%);
+      background-attachment: fixed;
+      color: #6b0e4e;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    /* Floating particles animation */
+    .floating-particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .heart {
+      position: absolute;
+      color: #ff69b4;
+      font-size: 20px;
+      animation: float 6s infinite linear;
+      opacity: 0.7;
+    }
+
+    .rose-petal {
+      position: absolute;
+      font-size: 16px;
+      animation: floatPetal 8s infinite linear;
+      opacity: 0.8;
+    }
+
+    .star {
+      position: absolute;
+      color: #ffd700;
+      font-size: 12px;
+      animation: twinkle 3s infinite ease-in-out;
+      opacity: 0.6;
+    }
+
+    .message-emoji {
+      position: absolute;
+      font-size: 24px;
+      animation: floatMessage 10s infinite linear;
+      opacity: 0.9;
+      cursor: pointer;
+      pointer-events: auto;
+      transition: transform 0.2s ease;
+      filter: drop-shadow(0 0 8px rgba(255, 105, 180, 0.6));
+    }
+
+    .message-emoji:hover {
+      transform: scale(1.2);
+      filter: drop-shadow(0 0 12px rgba(255, 105, 180, 0.8));
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.7;
+      }
+      90% {
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes floatPetal {
+      0% {
+        transform: translateY(100vh) rotate(0deg) translateX(0px);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.8;
+      }
+      50% {
+        transform: translateY(50vh) rotate(180deg) translateX(20px);
+      }
+      90% {
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-100px) rotate(360deg) translateX(-20px);
+        opacity: 0;
+      }
+    }
+
+    @keyframes twinkle {
+      0%, 100% {
+        opacity: 0.3;
+        transform: scale(0.8);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+    }
+
+    @keyframes floatMessage {
+      0% {
+        transform: translateY(100vh) rotate(0deg) translateX(0px);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.9;
+      }
+      90% {
+        opacity: 0.9;
+      }
+      100% {
+        transform: translateY(-100px) rotate(360deg) translateX(10px);
+        opacity: 0;
+      }
+    }
+
+    header {
+      background: linear-gradient(45deg, #ff69b4, #ffb6c1, #ffc0cb, #ff1493);
+      background-size: 400% 400%;
+      animation: gradientShift 4s ease infinite;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      animation: shimmer 3s infinite;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes shimmer {
+      0% { left: -100%; }
+      100% { left: 100%; }
+    }
+
+    header h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 2;
+    }
+
+    .section {
+      padding: 3rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .intro-images {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .intro-images img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba(255, 182, 193, 0.5);
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 40px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 20px;
+      height: 100%;
+      width: 3px;
+      background: linear-gradient(to bottom, #ff69b4, #ff1493, #ff69b4);
+      border-radius: 2px;
+      box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+    }
+
+    .event {
+      position: relative;
+      margin-bottom: 3rem;
+      background: rgba(255, 255, 255, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 1.5rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(255, 182, 193, 0.2);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+    }
+
+    .event:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 15px 40px rgba(255, 105, 180, 0.3);
+      background: rgba(255, 255, 255, 0.35);
+      border: 1px solid rgba(255, 182, 193, 0.4);
+    }
+
+    .event::before {
+      content: '💖';
+      position: absolute;
+      left: -42px;
+      top: 15px;
+      background: linear-gradient(45deg, #ff69b4, #ff1493);
+      padding: 8px;
+      font-size: 1.2rem;
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba(255, 105, 180, 0.6);
+      animation: heartbeat 2s infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    .event h3 {
+      margin: 0 0 1rem 0;
+      font-size: 1.5rem;
+      color: #d63384;
+      font-weight: 600;
+      text-shadow: 1px 1px 2px rgba(255, 105, 180, 0.3);
+    }
+
+    .event p {
+      margin: 0;
+      line-height: 1.6;
+      text-align: justify;
+      color: #6b0e4e;
+    }
+
+    .magic-button {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    button {
+      background: linear-gradient(45deg, #ff69b4, #ff1493);
+      border: none;
+      padding: 1rem 2rem;
+      color: white;
+      font-size: 1.2rem;
+      border-radius: 2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s;
+    }
+
+    button:hover {
+      background: linear-gradient(45deg, #ff1493, #dc143c);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 105, 180, 0.6);
+    }
+
+    button:hover::before {
+      left: 100%;
+    }
+
+    .love-message {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 1.3rem;
+      font-style: italic;
+      min-height: 3rem;
+      color: #d63384;
+      text-shadow: 1px 1px 2px rgba(255, 105, 180, 0.3);
+      animation: fadeIn 0.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .slideshow {
+      position: relative;
+      max-width: 100%;
+      height: 400px;
+      margin-top: 2rem;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(255, 105, 180, 0.3);
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .slides {
+      display: flex;
+      width: 700%;
+      height: 100%;
+      animation: slide 28s infinite;
+    }
+
+    .slides img {
+      width: calc(100% / 7);
+      height: 100%;
+      object-fit: contain;
+      animation: kenBurns 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes slide {
+      0%   { transform: translateX(0); }
+      14.28%  { transform: translateX(-14.28%); }
+      28.56%  { transform: translateX(-28.56%); }
+      42.84%  { transform: translateX(-42.84%); }
+      57.12%  { transform: translateX(-57.12%); }
+      71.4%   { transform: translateX(-71.4%); }
+      85.68%  { transform: translateX(-85.68%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    @keyframes kenBurns {
+      0% {
+        transform: scale(1) translateX(0) translateY(0);
+      }
+      100% {
+        transform: scale(1.05) translateX(-2px) translateY(-2px);
+      }
+    }
+
+    /* Premium Lock Styling */
+    .event.locked {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .lock-overlay {
+      text-align: center;
+      padding: 2rem;
+      background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 105, 180, 0.1));
+      border: 2px dashed rgba(255, 215, 0, 0.5);
+      border-radius: 15px;
+      backdrop-filter: blur(5px);
+    }
+
+    .lock-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      animation: lockPulse 2s infinite;
+    }
+
+    @keyframes lockPulse {
+      0%, 100% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.1); opacity: 1; }
+    }
+
+    .locked-content {
+      display: none;
+    }
+
+    .unlock-btn {
+      background: linear-gradient(45deg, #ffd700, #ffb347);
+      color: #8b4513;
+      font-weight: bold;
+      margin-top: 1rem;
+      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+    }
+
+    .unlock-btn:hover {
+      background: linear-gradient(45deg, #ffb347, #ffa500);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+    }
+
+    /* Modal Styling */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+    }
+
+    .modal-content {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 182, 193, 0.95));
+      margin: 10% auto;
+      padding: 2rem;
+      border-radius: 20px;
+      width: 80%;
+      max-width: 500px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(255, 105, 180, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(15px);
+    }
+
+    .modal h2 {
+      color: #d63384;
+      margin-bottom: 1rem;
+      font-family: 'Great Vibes', cursive;
+      font-size: 2rem;
+    }
+
+    .modal p {
+      color: #6b0e4e;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 1.5rem 0;
+      gap: 0.5rem;
+    }
+
+    .checkbox-container input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      accent-color: #ff69b4;
+    }
+
+    .checkbox-container label {
+      color: #6b0e4e;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .modal-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+
+    .modal button {
+      padding: 0.8rem 1.5rem;
+      border-radius: 25px;
+      font-size: 1rem;
+    }
+
+    .cancel-btn {
+      background: linear-gradient(45deg, #ccc, #999);
+      color: #666;
+    }
+
+    .confirm-btn {
+      background: linear-gradient(45deg, #ff69b4, #ff1493);
+      color: white;
+    }
+
+    .confirm-btn:disabled {
+      background: linear-gradient(45deg, #ccc, #999);
+      color: #666;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .event-content {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+    }
+
+    .event-content:last-child {
+      margin-bottom: 0;
+    }
+
+    .event-content h3 {
+      margin: 0 0 1rem 0;
+      font-size: 1.4rem;
+      color: #d63384;
+      font-weight: 600;
+      text-shadow: 1px 1px 2px rgba(255, 105, 180, 0.3);
+    }
+
+    .event-content p {
+      margin: 0;
+      line-height: 1.6;
+      text-align: justify;
+      color: #6b0e4e;
+    }
+
+    .unlocked {
+      animation: unlockReveal 1s ease-out;
+    }
+
+    @keyframes unlockReveal {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes messagePopup {
+      0% {
+        opacity: 0;
+        transform: scale(0.5) translateY(20px);
+      }
+      20% {
+        opacity: 1;
+        transform: scale(1.1) translateY(-10px);
+      }
+      30% {
+        transform: scale(1) translateY(0);
+      }
+      90% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(0.8) translateY(-20px);
+      }
+    }
+
+    /* Countdown Styling */
+    .countdown-container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(255, 182, 193, 0.2);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      margin-top: 2rem;
+    }
+
+    .countdown-container h3 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5rem;
+      color: #d63384;
+      margin-bottom: 0.5rem;
+      text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.3);
+    }
+
+    .countdown-subtitle {
+      color: #6b0e4e;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+
+    .countdown-display {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+
+    .countdown-item {
+      background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 105, 180, 0.2));
+      border: 2px solid rgba(255, 215, 0, 0.3);
+      border-radius: 15px;
+      padding: 1rem;
+      min-width: 80px;
+      backdrop-filter: blur(10px);
+      animation: countdownPulse 2s infinite ease-in-out;
+    }
+
+    .countdown-number {
+      display: block;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #d63384;
+      text-shadow: 1px 1px 2px rgba(255, 105, 180, 0.5);
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .countdown-label {
+      display: block;
+      font-size: 0.9rem;
+      color: #8b4513;
+      font-weight: 600;
+      margin-top: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .countdown-message {
+      color: #d63384;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      text-shadow: 1px 1px 2px rgba(255, 105, 180, 0.3);
+    }
+
+    @keyframes countdownPulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+      }
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .countdown-display {
+        gap: 1rem;
+      }
+      
+      .countdown-item {
+        min-width: 60px;
+        padding: 0.8rem;
+      }
+      
+      .countdown-number {
+        font-size: 2rem;
+      }
+      
+      .countdown-container h3 {
+        font-size: 2rem;
+      }
+    }
+
+    footer {
+      background: #ffe4e1;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #6b0e4e;
+    }
+  </style>
+</head>
+<body>
+
+<div class="floating-particles" id="floatingParticles"></div>
+
+<header>
+  <h1>Our Fairytale Love Story</h1>
+</header>
+
+<section class="section">
+  <h2 style="text-align:center;">Meet the Royal Couple</h2>
+  <div class="intro-images">
+    <div>
+      <img src="her.jpg" alt="Princess">
+      <p style="text-align:center;">Pretty Baby 👸🏼</p>
+    </div>
+    <div>
+      <img src="your.jpg" alt="Prince">
+      <p style="text-align:center;">Humble Peasant 💩</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 style="text-align:center;">Once Upon a Time...</h2>
+  <div class="timeline">
+    <div class="event">
+      <h3>When We Were Young</h3>
+      <p>Long before royal titles and enchanted memories, the princess and the peasant were mere children in the same kingdom. Fate had brought them together early on, though their bond was far from magical at the time. The princess remembered him as a brash, arrogant, and annoying little boy. The peasant, full of mischief, never missed a chance to get on her nerves. Yet even in those youthful scuffles, destiny was already setting the stage for something much more beautiful to unfold.</p>
+    </div>
+    <div class="event-content">
+      <h3>The Princess in the Peasant's Hut</h3>
+      <p>The princess, ever so graceful and curious, decided to reside in the peasant's humble hut under the noble pretense of reviewing the living conditions of her region. One chilly night, without a comforter and with the cold creeping in, she gently cuddled up beside the peasant. That night sparked a beautiful rhythm of quiet embraces and peaceful slumber. Each night that followed was filled with warmth, safety, and a connection deeper than either had known. Wrapped in each other's arms, they found comfort and magic in the simplest form of love, just being close.</p>
+    </div>
+    <div class="event locked" id="lockedEvent">
+      <div class="lock-overlay">
+        <div class="lock-icon">🔒</div>
+        <h3>Premium Content</h3>
+        <p>The most intimate chapters of our love story require special access...</p>
+        <button class="unlock-btn" onclick="showUnlockModal()">Unlock Premium Section</button>
+      </div>
+      <div class="locked-content" id="lockedContent">
+        <div class="event-content">
+          <h3>The First Kiss</h3>
+          <p>In the quiet sanctuary of the peasant's humble hut, they lay together in peaceful slumber, their bodies naturally drawn to one another's warmth. The princess's gentle breath danced across the peasant's neck like the softest whisper of wind through silk. His tender fingers traced delicate patterns along her arm and back, each gentle stroke a silent poem of affection. In that drowsy, magical moment between sleep and waking, he felt her face tilt ever so slightly toward his—a movement as natural as flowers turning toward the sun. Without thought or hesitation, he touched his lips to hers in the gentlest of kisses. What began as the softest caress suddenly ignited into something deeper and more passionate—playful bites and fervent kisses that spoke of a love too powerful to contain. It was their first kiss, raw and beautiful, marking the moment when two hearts truly became one.</p>
+        </div>
+        <div class="event-content">
+          <h3>Heaven in the Pink City</h3>
+          <p>In the sultry heat of Jaipur's ancient chambers, where maharajas once claimed their queens, the princess and peasant found themselves consumed by an insatiable desire. The exotic spices in the air seemed to awaken every sense as their bodies intertwined with desperate passion. What began as tender caresses quickly escalated into something primal and intoxicating. The peasant worshipped every inch of his princess like she was a goddess, their whispered moans echoing off the palace walls. In that sacred moment of complete surrender, they discovered pleasures beyond imagination—a dance as old as time itself, where every touch sent waves of ecstasy through their trembling forms. For the peasant, it was pure heaven—losing himself completely in the warmth and softness of his beloved princess under the watchful stars of the Pink City.</p>
+        </div>
+      </div>
+    </div>
+    <div class="event-content">
+      <h3>Forever and Always</h3>
+      <p>And so begins the greatest adventure of all—a lifetime stretching before them like an endless tapestry of dreams waiting to be woven. The princess and her beloved peasant stand at the threshold of forever, their hearts brimming with plans and promises. Together, they will build a kingdom of their own, filled with love and laughter. There are countless sunsets to chase across distant lands, mountains to climb hand in hand, and oceans to explore together. And yes, there will be daily royal scoldings that the peasant will listen to with a smile. Their love story is far from over—it's just the beginning. With each passing day, they will discover new ways to love, new dreams to pursue, and new memories to treasure. The world awaits them, vast and beautiful, ready to be their playground. And through it all, their love will be the compass that guides them home to each other, no matter how far their adventures may take them.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 style="text-align:center;">Special Countdown ⏰</h2>
+  <div class="countdown-container">
+    <h3>Countdown to National Girlfriends Day</h3>
+    <p class="countdown-subtitle">Days until I get to officially celebrate the most amazing princess in the world! 👸💖</p>
+    <div class="countdown-display" id="countdown">
+      <div class="countdown-item">
+        <span class="countdown-number" id="days">000</span>
+        <span class="countdown-label">Days</span>
+      </div>
+      <div class="countdown-item">
+        <span class="countdown-number" id="hours">00</span>
+        <span class="countdown-label">Hours</span>
+      </div>
+      <div class="countdown-item">
+        <span class="countdown-number" id="minutes">00</span>
+        <span class="countdown-label">Minutes</span>
+      </div>
+      <div class="countdown-item">
+        <span class="countdown-number" id="seconds">00</span>
+        <span class="countdown-label">Seconds</span>
+      </div>
+    </div>
+    <div class="countdown-message" id="countdownMessage">
+      Get ready for the most special celebration! 🎉
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 style="text-align:center;">Moments Captured 📸</h2>
+  <div class="slideshow">
+    <div class="slides">
+      <img src="gallery1.jpg" alt="Slide 1">
+      <img src="gallery2.jpg" alt="Slide 2">
+      <img src="gallery3.jpg" alt="Slide 3">
+      <img src="gallery4.jpg" alt="Slide 4">
+      <img src="gallery5.jpg" alt="Slide 5">
+      <img src="gallery6.jpg" alt="Slide 6">
+      <img src="gallery7.jpg" alt="Slide 7">
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="magic-button">
+    <button onclick="showLoveMessage()">Click for a Royal Whisper 💌</button>
+    <div class="love-message" id="messageBox"></div>
+  </div>
+</section>
+
+<!-- Unlock Modal -->
+<div id="unlockModal" class="modal">
+  <div class="modal-content">
+    <h2>Premium Access Required</h2>
+    <p>To unlock this intimate chapter of our love story, you must acknowledge the following:</p>
+    <div class="checkbox-container">
+      <input type="checkbox" id="acknowledgeCheckbox" onchange="toggleUnlockButton()">
+      <label for="acknowledgeCheckbox">I acknowledge that I will need to send a XXX snap to unlock this premium section 📸💕</label>
+    </div>
+    <div class="modal-buttons">
+      <button class="cancel-btn" onclick="closeUnlockModal()">Cancel</button>
+      <button class="confirm-btn" id="confirmUnlock" onclick="unlockPremiumContent()" disabled>Unlock Content</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Handcrafted with 50% love and 50% fear
+</footer>
+
+<script>
+  const messages = [
+    "You're my pretty little princess",
+    "In your eyes, I find heaven.",
+    "You turn my ordinary days into grumpy ones",
+    "Your scent is my favorite perfume",
+    "My heart beats in rhythm with yours, my princess",
+    "You are my world",
+    "You are the prettiest chapter in my life's story",
+    "You make my peasant heart feel like royalty",
+    "You are my forever and ever"
+  ];
+
+  let currentMessageIndex = 0;
+  let floatingMessageIndex = 0;
+
+  function showLoveMessage() {
+    const box = document.getElementById("messageBox");
+    const button = document.querySelector(".magic-button button");
+    
+    // Get the current message and display it
+    box.textContent = messages[currentMessageIndex];
+    button.textContent = "Click again for another Royal Whisper 💫";
+    
+    // Move to next message, loop back to start when we reach the end
+    currentMessageIndex = (currentMessageIndex + 1) % messages.length;
+    
+    // Add sparkle effect when message appears
+    createSparkles();
+  }
+
+  function createSparkles() {
+    const sparkleCount = 5;
+    for (let i = 0; i < sparkleCount; i++) {
+      setTimeout(() => {
+        const sparkle = document.createElement('div');
+        sparkle.innerHTML = '✨';
+        sparkle.style.position = 'fixed';
+        sparkle.style.left = Math.random() * window.innerWidth + 'px';
+        sparkle.style.top = Math.random() * window.innerHeight + 'px';
+        sparkle.style.fontSize = '20px';
+        sparkle.style.pointerEvents = 'none';
+        sparkle.style.zIndex = '1000';
+        sparkle.style.animation = 'sparkle 2s ease-out forwards';
+        document.body.appendChild(sparkle);
+        
+        setTimeout(() => sparkle.remove(), 2000);
+      }, i * 100);
+    }
+  }
+
+  // Enhanced particle system
+  function createFloatingHeart() {
+    const particlesContainer = document.getElementById('floatingParticles');
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.innerHTML = Math.random() > 0.5 ? '💖' : '💕';
+    heart.style.left = Math.random() * 100 + '%';
+    heart.style.animationDelay = Math.random() * 2 + 's';
+    heart.style.animationDuration = (4 + Math.random() * 4) + 's';
+    
+    particlesContainer.appendChild(heart);
+    
+    setTimeout(() => {
+      heart.remove();
+    }, 8000);
+  }
+
+  function createFloatingPetal() {
+    const particlesContainer = document.getElementById('floatingParticles');
+    const petal = document.createElement('div');
+    petal.className = 'rose-petal';
+    
+    // Different rose petal emojis and colors
+    const petalTypes = ['🌸', '🌺', '🌹', '💐'];
+    const colors = ['#ffb6c1', '#ff69b4', '#ff1493', '#ffc0cb'];
+    
+    petal.innerHTML = petalTypes[Math.floor(Math.random() * petalTypes.length)];
+    petal.style.color = colors[Math.floor(Math.random() * colors.length)];
+    petal.style.left = Math.random() * 100 + '%';
+    petal.style.animationDelay = Math.random() * 3 + 's';
+    petal.style.animationDuration = (6 + Math.random() * 4) + 's';
+    
+    particlesContainer.appendChild(petal);
+    
+    setTimeout(() => {
+      petal.remove();
+    }, 10000);
+  }
+
+  function createTwinklingStar() {
+    const particlesContainer = document.getElementById('floatingParticles');
+    const star = document.createElement('div');
+    star.className = 'star';
+    star.innerHTML = '✨';
+    star.style.left = Math.random() * 100 + '%';
+    star.style.top = Math.random() * 100 + '%';
+    star.style.animationDelay = Math.random() * 2 + 's';
+    star.style.animationDuration = (2 + Math.random() * 2) + 's';
+    
+    particlesContainer.appendChild(star);
+    
+    setTimeout(() => {
+      star.remove();
+    }, 6000);
+  }
+
+  function createFloatingMessage() {
+    const particlesContainer = document.getElementById('floatingParticles');
+    const messageEmoji = document.createElement('div');
+    messageEmoji.className = 'message-emoji';
+    
+    // Different message emojis
+    const messageTypes = ['💌', '📩', '💬', '📝'];
+    
+    messageEmoji.innerHTML = messageTypes[Math.floor(Math.random() * messageTypes.length)];
+    messageEmoji.style.left = Math.random() * 100 + '%';
+    messageEmoji.style.animationDelay = Math.random() * 2 + 's';
+    messageEmoji.style.animationDuration = (8 + Math.random() * 4) + 's';
+    
+    // Add click event listener
+    messageEmoji.addEventListener('click', function(e) {
+      e.preventDefault();
+      showFloatingMessage(e.clientX, e.clientY);
+      
+      // Remove the clicked emoji with sparkle effect
+      createClickSparkles(e.clientX, e.clientY);
+      messageEmoji.remove();
+    });
+    
+    particlesContainer.appendChild(messageEmoji);
+    
+    setTimeout(() => {
+      messageEmoji.remove();
+    }, 12000);
+  }
+
+  function showFloatingMessage(x, y) {
+    // Get the current message and iterate through the array
+    const currentMessage = messages[floatingMessageIndex];
+    
+    // Move to next message, loop back to start when we reach the end
+    floatingMessageIndex = (floatingMessageIndex + 1) % messages.length;
+    
+    // Create message popup
+    const messagePopup = document.createElement('div');
+    messagePopup.innerHTML = currentMessage;
+    messagePopup.style.position = 'fixed';
+    messagePopup.style.left = (x - 100) + 'px'; // Center around click point
+    messagePopup.style.top = (y - 50) + 'px';
+    messagePopup.style.background = 'linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 182, 193, 0.95))';
+    messagePopup.style.padding = '1rem 1.5rem';
+    messagePopup.style.borderRadius = '20px';
+    messagePopup.style.boxShadow = '0 10px 30px rgba(255, 105, 180, 0.4)';
+    messagePopup.style.border = '1px solid rgba(255, 255, 255, 0.3)';
+    messagePopup.style.backdropFilter = 'blur(15px)';
+    messagePopup.style.color = '#d63384';
+    messagePopup.style.fontWeight = '600';
+    messagePopup.style.fontSize = '1rem';
+    messagePopup.style.textAlign = 'center';
+    messagePopup.style.zIndex = '1001';
+    messagePopup.style.pointerEvents = 'none';
+    messagePopup.style.maxWidth = '200px';
+    messagePopup.style.animation = 'messagePopup 4s ease-out forwards';
+    
+    document.body.appendChild(messagePopup);
+    
+    // Auto remove after 4 seconds
+    setTimeout(() => {
+      messagePopup.remove();
+    }, 4000);
+  }
+
+  function createClickSparkles(x, y) {
+    // Create sparkles at click location
+    for (let i = 0; i < 8; i++) {
+      setTimeout(() => {
+        const sparkle = document.createElement('div');
+        sparkle.innerHTML = '✨';
+        sparkle.style.position = 'fixed';
+        sparkle.style.left = (x + (Math.random() - 0.5) * 100) + 'px';
+        sparkle.style.top = (y + (Math.random() - 0.5) * 100) + 'px';
+        sparkle.style.fontSize = '16px';
+        sparkle.style.pointerEvents = 'none';
+        sparkle.style.zIndex = '1000';
+        sparkle.style.animation = 'sparkle 2s ease-out forwards';
+        document.body.appendChild(sparkle);
+        
+        setTimeout(() => sparkle.remove(), 2000);
+      }, i * 50);
+    }
+  }
+
+  // Create different particles periodically
+  setInterval(createFloatingHeart, 3000);
+  setInterval(createFloatingPetal, 2000);
+  setInterval(createTwinklingStar, 4000);
+  setInterval(createFloatingMessage, 8000); // Message emojis every 8 seconds
+
+  // Add sparkle animation CSS
+  const sparkleStyle = document.createElement('style');
+  sparkleStyle.textContent = `
+    @keyframes sparkle {
+      0% {
+        opacity: 0;
+        transform: scale(0) rotate(0deg);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1) rotate(180deg);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(0) rotate(360deg);
+      }
+    }
+  `;
+  document.head.appendChild(sparkleStyle);
+
+  // Premium unlock functionality
+  function showUnlockModal() {
+    document.getElementById('unlockModal').style.display = 'block';
+  }
+
+  function closeUnlockModal() {
+    document.getElementById('unlockModal').style.display = 'none';
+    document.getElementById('acknowledgeCheckbox').checked = false;
+    document.getElementById('confirmUnlock').disabled = true;
+  }
+
+  function toggleUnlockButton() {
+    const checkbox = document.getElementById('acknowledgeCheckbox');
+    const button = document.getElementById('confirmUnlock');
+    button.disabled = !checkbox.checked;
+  }
+
+  function unlockPremiumContent() {
+    const lockedEvent = document.getElementById('lockedEvent');
+    const lockOverlay = lockedEvent.querySelector('.lock-overlay');
+    const lockedContent = document.getElementById('lockedContent');
+    
+    // Hide the lock overlay
+    lockOverlay.style.display = 'none';
+    
+    // Show the locked content with animation
+    lockedContent.style.display = 'block';
+    lockedContent.classList.add('unlocked');
+    
+    // Remove the locked class
+    lockedEvent.classList.remove('locked');
+    
+    // Close the modal
+    closeUnlockModal();
+    
+    // Create celebration effect
+    createUnlockCelebration();
+  }
+
+  function createUnlockCelebration() {
+    // Create extra sparkles for celebration
+    for (let i = 0; i < 15; i++) {
+      setTimeout(() => {
+        const sparkle = document.createElement('div');
+        sparkle.innerHTML = Math.random() > 0.5 ? '✨' : '💖';
+        sparkle.style.position = 'fixed';
+        sparkle.style.left = Math.random() * window.innerWidth + 'px';
+        sparkle.style.top = Math.random() * window.innerHeight + 'px';
+        sparkle.style.fontSize = '24px';
+        sparkle.style.pointerEvents = 'none';
+        sparkle.style.zIndex = '1000';
+        sparkle.style.animation = 'sparkle 3s ease-out forwards';
+        document.body.appendChild(sparkle);
+        
+        setTimeout(() => sparkle.remove(), 3000);
+      }, i * 50);
+    }
+  }
+
+  // Close modal when clicking outside
+  window.onclick = function(event) {
+    const modal = document.getElementById('unlockModal');
+    if (event.target === modal) {
+      closeUnlockModal();
+    }
+  }
+
+  // Countdown functionality
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const currentYear = new Date().getFullYear();
+    
+    // Set target date to next August 1st
+    let targetDate = new Date(currentYear, 7, 1); // Month is 0-indexed, so 7 = August
+    
+    // If August 1st has already passed this year, target next year
+    if (now > targetDate.getTime()) {
+      targetDate = new Date(currentYear + 1, 7, 1);
+    }
+    
+    const distance = targetDate.getTime() - now;
+    
+    // Calculate time units
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    // Update the display
+    document.getElementById('days').textContent = days.toString().padStart(3, '0');
+    document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+    document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+    document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+    
+    // Update message based on time remaining
+    const messageElement = document.getElementById('countdownMessage');
+    if (distance < 0) {
+      messageElement.textContent = "Happy National Girlfriends Day, my beautiful princess! 👸💖";
+      messageElement.style.fontSize = '1.5rem';
+      messageElement.style.animation = 'heartbeat 1s infinite';
+    } else if (days <= 7) {
+      messageElement.textContent = "Almost time to celebrate my amazing princess! 🎉✨";
+    } else if (days <= 30) {
+      messageElement.textContent = "Getting closer to our special celebration! 💕";
+    } else {
+      messageElement.textContent = "Get ready for the most special celebration! 🎉";
+    }
+  }
+
+  // Initialize floating hearts when page loads
+  window.addEventListener('load', () => {
+    // Create initial hearts
+    for (let i = 0; i < 3; i++) {
+      setTimeout(createFloatingHeart, i * 1000);
+    }
+    
+    // Start countdown
+    updateCountdown();
+    setInterval(updateCountdown, 1000); // Update every second
+  });
+</script>
+
+</body>
+</html>
